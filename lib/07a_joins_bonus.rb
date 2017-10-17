@@ -65,7 +65,8 @@ end
 
 def heart_tracks
   # For each album show the title and the total number of tracks containing
-  # the word 'Heart' (albums with no such tracks need not be shown). Order first by
+  # the word 'Heart' (albums with no such tracks need not be shown). Order
+  # first by
   # the number of such tracks, then by album title.
   execute(<<-SQL)
     SELECT
@@ -200,7 +201,7 @@ def expensive_tastes
       ) AS album_track_counts ON styles.album = album_track_counts.asin
     GROUP BY
       styles.style
-    ORDER BY  (SUM(album_track_counts.price) / SUM(album_track_counts.count)) DESC
+    ORDER BY (SUM(album_track_counts.price) / SUM(album_track_counts.count)) DESC
     LIMIT 5
   SQL
 end
