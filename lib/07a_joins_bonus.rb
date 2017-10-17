@@ -184,7 +184,7 @@ def expensive_tastes
   # determine the average price per track.
   execute(<<-SQL)
     SELECT
-      styles.style, SUM(album_track_counts.price) / SUM(album_track_counts.count)
+      styles.style, SUM(album_track_counts.price) / SUM(album_track_counts.count) 
     FROM
       styles
     JOIN (
